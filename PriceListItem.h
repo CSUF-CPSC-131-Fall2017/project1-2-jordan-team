@@ -12,7 +12,8 @@ public:
 	double getPrice();
 	bool isTaxable();
 private:
-	// any private member variables and methods go here
-	// TO BE COMPLETED
-	//Test line
+	string name; 
+	string bcode; 
+	double cost;
+	bool tax;
 };
