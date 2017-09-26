@@ -1,28 +1,32 @@
 #include "PriceListItem.h"
 
 PriceListItem::PriceListItem(const string &itemName, const string &code, double price, bool taxable) {
-	// TO BE COMPLETED
-	// added line
+	name = itemName;
+	bcode = code;
+	cost = price;
+	tax = taxable;
 }
 
 PriceListItem::PriceListItem() {
-	// TO BE COMPLETED
-
+	name = "";
+	bcode = "";
+	cost = 0.00;
+	tax = false;
 }
 
 string PriceListItem::getItemName() {
-	// TO BE COMPLETED
+	return name;
 }
 
 string PriceListItem::getCode() {
-	// TO BE COMPLETED
+	return bcode;
 }
 
 double PriceListItem::getPrice() {
-	// TO BE COMPLETED
+	return cost;
 }
 
 bool PriceListItem::isTaxable() {
-	// TO BE COMPLETED
+	return tax;
 }
 
