@@ -40,5 +40,14 @@ PriceListItem PriceList::getItem(string code) const {
 
 // add to the price list information about a new item
 void PriceList::addEntry(string itemName, string code, double price, bool taxable) {
-	// TO BE COMPLETED
+	PriceListItem tmp; 
+	tmp.setName(itemName);
+	tmp.setCode(code);
+	tmp.setPrice(price);
+	tmp.setTaxable(taxable);
+	
+}
+
+PriceList::PriceList(){
+	list = new PriceListItem[1000000];
 }
