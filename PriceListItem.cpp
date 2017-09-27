@@ -29,4 +29,18 @@ double PriceListItem::getPrice() {
 bool PriceListItem::isTaxable() {
 	return tax;
 }
+void PriceListItem::setItemName(string itemName) {
+	name = itemName;
+}
 
+void PriceListItem::setCode(string code) {
+	bcode = code;
+}
+
+void PriceListItem::setPrice(double price) {
+	cost = price;
+}
+
+void PriceListItem::setTaxable(bool taxable) {
+	tax = taxable;
+}
