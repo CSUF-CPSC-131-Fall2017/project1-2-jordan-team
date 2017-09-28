@@ -29,25 +29,54 @@ void PriceList::createPriceListFromDatafile(string filename) {
 
 // return true only if the code is valid
 bool PriceList::isValid(string code) const {
-	// TO BE COMPLETED
-
+	bool found = true; 
+	for (int i = 0; i < numItems; i++)
+	{
+		if (theList[i].getCode() == code)
+			return found;
+		else
+			found = false; 
+	}
+	return found;
 }
 
 // return price, item name, taxable? as an ItemPrice object; throw exception if code is not found
-PriceListItem PriceList::getItem(string code) const {
-	// TO BE COMPLETED
+	PriceListItem PriceList::getItem(const string code) const {
+	PriceListItem * tmp = new PriceListItem;
+	//put in a try statement
+	for (int i = 0; i < 1000000; i++) {
+		if (code == tmp[i].getCode()) {
+			return tmp[i];
+		}
+		else {
+			throw invalid_argument("Could find code " + code);
+			return tmp[i];
+		}
+	}
 }
 
 // add to the price list information about a new item
-void PriceList::addEntry(string itemName, string code, double price, bool taxable) {
-	PriceListItem tmp; 
-	tmp.setName(itemName);
-	tmp.setCode(code);
-	tmp.setPrice(price);
-	tmp.setTaxable(taxable);
-	
+void PriceList::addEntry(string itemName, string code, double price, bool taxable) { 
+	PriceListItem newItem;
+	newItem.setItemName(itemName); 
+	newItem.setCode(code); 
+	newItem.setPrice(price); 
+	newItem.setTaxable(taxable);
+	theList[numItems] = newItem; 
+	numItems++;
 }
 
-PriceList::PriceList(){
-	list = new PriceListItem[1000000];
+//constructor
+PriceList::PriceList() {
+	numItems = 0; 
+	theList = new PriceListItem[1000000];
 }
+
+//destructor
+//something may be wwrong causes breakpoint error
+PriceList::~PriceList() {
+	delete [] theList;
+	theList = NULL;
+}
+
+
