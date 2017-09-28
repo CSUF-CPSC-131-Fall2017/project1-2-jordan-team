@@ -1,10 +1,10 @@
 #include "PriceListItem.h"
 
 PriceListItem::PriceListItem(const string &itemName, const string &code, double price, bool taxable) {
-	name = itemName;
-	bcode = code;
-	cost = price;
-	tax = taxable;
+	setItemName(itemName);
+	setCode(code);
+	setPrice(price);
+	setTaxable(taxable);																																																																																						
 }
 
 PriceListItem::PriceListItem() {
@@ -14,6 +14,7 @@ PriceListItem::PriceListItem() {
 	tax = false;
 }
 
+//get functions return value
 string PriceListItem::getItemName() {
 	return name;
 }
@@ -29,18 +30,19 @@ double PriceListItem::getPrice() {
 bool PriceListItem::isTaxable() {
 	return tax;
 }
-void PriceListItem::setItemName(string itemName) {
-	name = itemName;
-}
 
+//set functions set value
+void PriceListItem::setItemName(string ItemName) {
+	name = ItemName;
+}
 void PriceListItem::setCode(string code) {
 	bcode = code;
 }
-
 void PriceListItem::setPrice(double price) {
 	cost = price;
 }
-
 void PriceListItem::setTaxable(bool taxable) {
 	tax = taxable;
 }
+
+
